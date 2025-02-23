@@ -31,7 +31,7 @@ docker build asciidoctor -t asciidoctor
 Run AsciiDoctor to generate site with Structurizr diagrams:
 
 ```
-docker run -it -v $PWD:/documents/ asciidoctor
+docker run --rm -it -v $PWD:/documents/ asciidoctor
 
 asciidoctor -r asciidoctor-diagram src/docs/arc42/arc42.adoc -D output/docs
 ```
