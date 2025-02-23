@@ -98,6 +98,18 @@ include::../cml/generated-diagrams/contextmapper_BC_CargoBookingContext.puml[]
 include::../dsl/workspace.dsl[]
 ....
 
+*C4 Model L2*
+[structurizr, target=C4-L2, format=png, renderer=plantuml, view=Containers]
+....
+include::../dsl/workspace.dsl[]
+....
+
+*C4 Model L3*
+[structurizr, target=C4-L3, format=png, renderer=plantuml, view=Components]
+....
+include::../dsl/workspace.dsl[]
+....
+
 
 Motivation::
 
