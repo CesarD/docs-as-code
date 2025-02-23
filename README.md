@@ -1,3 +1,7 @@
+This is an experimentation repository for playing around with the Docs-As-Code approach for generating systems documentation.
+Below there are some commands to perform some tasks over the content included here.
+
+
 Build ContextMapper image:
 
 ```
