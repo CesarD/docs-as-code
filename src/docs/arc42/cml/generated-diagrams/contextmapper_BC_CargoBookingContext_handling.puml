@@ -1,0 +1,23 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package handling {
+	package "'Handling' Aggregate" <<Rectangle>> {
+		class HandlingEvent <<(A,#fffab8) Aggregate Root>> {
+			Type handlingType
+			Date completionTime
+			Date registrationTime
+			Voyage voyage
+			LocationShared location
+			Cargo cargo
+		}
+		class HandlingHistory <<(V,DarkSeaGreen) Value Object>> {
+			List<HandlingEvent> handlingEvents
+		}
+	}
+}
+HandlingHistory "1" *--> "*" HandlingEvent : handlingEvents
+
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package location {
+	package "'Location' Aggregate" <<Rectangle>> {
+		class Location <<(A,#fffab8) Aggregate Root>> {
+			PortCode portcode
+			String name
+			UnLocode unLocode
+		}
+		class UnLocode <<(V,DarkSeaGreen) Value Object>> {
+			String unLocode
+		}
+		class LocationShared <<(V,DarkSeaGreen) Value Object>> {
+			PortCode portCode
+			Location location
+		}
+	}
+}
+LocationShared --> Location : location
+Location --> UnLocode : unLocode
+
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package voyage {
+	package "'Voyage' Aggregate" <<Rectangle>> {
+		class Voyage <<(A,#fffab8) Aggregate Root>> {
+			VoyageNumber voyageNumber
+			Schedule schedule
+		}
+		class CarrierMovement <<(V,DarkSeaGreen) Value Object>> {
+			Date departureTime
+			Date arrivalTime
+			LocationShared departureLocation
+			LocationShared arrivalLocation
+		}
+		class Schedule <<(V,DarkSeaGreen) Value Object>> {
+			List<CarrierMovement> carrierMovements
+		}
+		class VoyageNumber <<(V,DarkSeaGreen) Value Object>> {
+			String number
+		}
+	}
+}
+Voyage --> Schedule : schedule
+Schedule "1" *--> "*" CarrierMovement : carrierMovements
+Voyage --> VoyageNumber : voyageNumber
+
+
+@enduml

@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  structurizr-lite:
+    image: structurizr/lite:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - ./src/docs/arc42/dsl:/usr/local/structurizr
+
