@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   structurizr-lite:
     image: structurizr/lite:latest
@@ -8,3 +6,14 @@ services:
     volumes:
       - ./src/docs/arc42/dsl:/usr/local/structurizr
 
+  structurizr-export:
+    image: structurizr-export
+    build:
+      context: ./structurizr-export
+    depends_on:
+      - structurizr-lite
+    environment:
+      STRUCTURIZR_LITE: http://structurizr-lite:8080
+      IMAGE_FORMAT: svg
+    volumes:
+      - ./src/docs/arc42/dsl/generated-diagrams:/home/pptruser/output

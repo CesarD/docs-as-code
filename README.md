@@ -22,6 +22,18 @@ Run Structurizr Lite:
 docker compose up structurizr-lite
 ```
 
+Run Structurizr CLI (export views)
+
+```
+docker run -it --rm -v $PWD/src/docs/arc42/dsl:/usr/local/structurizr structurizr/cli export -w workspace.dsl -f plantuml -o generated-diagrams
+```
+
+Run Structurizr Export (Puppeteer automation for exporting views via Structurizr-Lite)
+
+```
+docker compose run --rm structurizr-export
+```
+
 Create AsciiDoctor w/Structurizr-CLI image:
 
 ```
